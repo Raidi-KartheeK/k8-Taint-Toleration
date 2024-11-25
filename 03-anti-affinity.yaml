@@ -1,0 +1,26 @@
+apiVersin: v1
+kind: pod
+metadata:
+  name: nginx
+spec:
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: another-node-label-value
+            operator: In
+            values:
+            - another-node-label-value
+  containers:
+  - name: nginx
+    image: nginx:stable-perl
+  # if label the node it will go to tainted node
+  # nodeSelector:
+  #   hardware: gup
+  tolerations:
+- key: "hardware"
+  operator: "Equal"
+  value: "gpu"
+  effect: "NoSchedule"

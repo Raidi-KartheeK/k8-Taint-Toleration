@@ -1,0 +1,16 @@
+apiVersin: v1
+kind: pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:stable-perl
+  # if label the node it will go to tainted node
+  nodeSelector:
+    hardware: gup
+  tolerations:
+- key: "hardware"
+  operator: "Equal"
+  value: "gpu"
+  effect: "NoSchedule"
