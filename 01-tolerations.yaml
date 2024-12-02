@@ -10,7 +10,7 @@ spec:
   nodeSelector:
     hardware: gup
   tolerations:
-- key: "hardware"
+  - key: "hardware"
   operator: "Equal"
   value: "gpu"
   effect: "NoSchedule"
