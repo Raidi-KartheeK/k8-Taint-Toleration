@@ -3,7 +3,7 @@ kind: pod
 metadata:
   name: nginx
 spec:
-   affinity:
+  affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
@@ -18,7 +18,7 @@ spec:
   # if label the node it will go to tainted node
   # nodeSelector:
   #   hardware: gup
-  tolerations:
+tolerations:
 - key: "hardware"
   operator: "Equal"
   value: "gpu"
