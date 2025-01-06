@@ -30,7 +30,7 @@ spec:
   - name: nginx
     image: nginx:stable-perl
 ---
-#Pod-ani-affinity
+#Pod-anti-affinity
 apiVersion: v1
 kind: Pod
 metadata:
