@@ -5,6 +5,7 @@ metadata:
 spec:
   affinity:
     nodeAffinity: # is like attracting the worker node.
+      # Hard rule
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
