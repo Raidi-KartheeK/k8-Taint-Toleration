@@ -6,7 +6,7 @@ spec:
   affinity:
     nodeAffinity:
       preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
+      - weight: 1 #if you give 200 preferense also it will check one-by-one if dont match then it will schedule 
         preference:
           matchExpressions:
           - key: another-node-label-value
